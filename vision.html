@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Vision - Mokko AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Inter:wght@400;700;800&family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom background animation for vision page - faster than home page */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            z-index: -1;
+            animation: visionFadeInBackground 0.8s ease-out 0.5s forwards;
+        }
+
+        @keyframes visionFadeInBackground {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .vision-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+        }
+
+        .vision-container {
+            width: 100%;
+            max-width: 700px;
+            margin-top: 2rem;
+        }
+
+        .vision-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .vision-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 42px;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: white;
+            letter-spacing: -0.02em;
+        }
+
+        .vision-subtitle {
+            font-family: 'Instrument Serif', serif;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        .article-content {
+            padding: 0;
+        }
+
+        .article-section {
+            margin-bottom: 3.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .article-section:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .section-heading {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            color: white;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255, 179, 217, 0.3);
+            display: inline-block;
+        }
+
+        .article-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            margin-bottom: 1.8rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-quote {
+            font-family: 'Instrument Serif', serif;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .highlight-quote::before {
+            content: '"';
+            font-size: 48px;
+            color: rgba(255, 179, 217, 0.6);
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Instrument Serif', serif;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: white;
+            transform: translateX(-4px);
+        }
+
+        .back-arrow {
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover .back-arrow {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 768px) {
+            .vision-container {
+                max-width: 100%;
+            }
+            
+            .article-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .vision-title {
+                font-size: 36px;
+            }
+            
+            .vision-subtitle {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .vision-title {
+                font-size: 28px;
+            }
+            
+            .vision-subtitle {
+                font-size: 16px;
+            }
+            
+            .article-content {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logo.png" alt="Mokko Logo" class="logo-image">
+                    <span class="company-name">Mokko</span>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="vision.html" class="nav-link active">Our Vision</a>
+                </nav>
+                <div class="header-right">
+                    <span class="header-link">Vision</span>
+                    <span class="arrow">→</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Vision Section -->
+        <section class="vision-section">
+            <div class="vision-container">
+                <div class="vision-header">
+                    <h1 class="vision-title">Our Vision</h1>
+                    <p class="vision-subtitle">Transforming static designs into interactive experiences that bring creative visions to life</p>
+                </div>
+                
+                <div class="article-content">
+                    <div class="article-section">
+                        <h2 class="section-heading">The Problem We're Solving</h2>
+                        <p class="article-text">
+                            In today's digital landscape, designers and marketers face a critical challenge: the gap between static mockups and real user experiences. 
+                            Beautiful Adobe Express designs, social media campaigns, and marketing materials often exist only as flat images, leaving stakeholders 
+                            to imagine how they'll actually work in practice.
+                        </p>
+                        <p class="article-text">
+                            This disconnect creates uncertainty in decision-making, makes client presentations less compelling, and prevents teams from truly 
+                            understanding how their designs will perform before going live. The result? Wasted time, missed opportunities, and campaigns that 
+                            don't meet their full potential.
+                        </p>
+                    </div>
+
+                    <div class="highlight-quote">
+                        "We believe every design deserves to be experienced, not just viewed."
+                    </div>
+
+                    <div class="article-section">
+                        <h2 class="section-heading">Our Vision for the Future</h2>
+                        <p class="article-text">
+                            At Mokko AI, we envision a world where every static design can instantly become an interactive prototype. 
+                            Where designers can test their concepts in real-time, marketers can validate campaigns before launch, and 
+                            clients can experience the full user journey before making decisions.
+                        </p>
+                        <p class="article-text">
+                            We're building the bridge between imagination and reality. Our AI-powered platform transforms flat designs 
+                            into clickable, navigable prototypes that preserve the original aesthetic while adding the dimension of 
+                            interactivity that modern digital experiences demand.
+                        </p>
+                    </div>
+
+                    <div class="article-section">
+                        <h2 class="section-heading">The Impact We're Creating</h2>
+                        <p class="article-text">
+                            By democratizing interactive prototyping, we're empowering creative teams to iterate faster, make better 
+                            decisions, and create more engaging user experiences. Social media managers can test campaign flows, 
+                            creative agencies can present compelling demos, and marketing teams can validate their strategies with 
+                            real user behavior data.
+                        </p>
+                        <p class="article-text">
+                            But beyond the practical benefits, we're fundamentally changing how people think about design. 
+                            No longer is design just about how something looks—it's about how it works, how it feels, and how 
+                            it guides users through meaningful experiences.
+                        </p>
+                    </div>
+
+                    <div class="article-section">
+                        <h2 class="section-heading">Looking Forward</h2>
+                        <p class="article-text">
+                            As we continue to develop Mokko AI, we're exploring new frontiers in design automation and user experience. 
+                            We're working on features that will make prototyping even more intuitive, integrations that will streamline 
+                            workflows, and AI capabilities that will understand design intent and suggest optimal interactions.
+                        </p>
+                        <p class="article-text">
+                            Our vision extends beyond just prototyping—we're building the foundation for a future where design and 
+                            functionality are seamlessly integrated from the very beginning. Where every creative decision is informed 
+                            by real user interaction, and where the gap between concept and reality continues to shrink.
+                        </p>
+                    </div>
+                </div>
+                
+                <a href="index.html" class="back-link">
+                    <span class="back-arrow">←</span>
+                    Back to Home
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll-triggered fade in animation for vision content
+        document.addEventListener('DOMContentLoaded', function() {
+            const visionContainer = document.querySelector('.vision-container');
+            const articleContent = document.querySelector('.article-content');
+            
+            // Initial fade in for header
+            visionContainer.style.opacity = '0';
+            visionContainer.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                visionContainer.style.transition = 'all 0.8s ease-out';
+                visionContainer.style.opacity = '1';
+                visionContainer.style.transform = 'translateY(0)';
+            }, 300);
+
+            // Scroll-triggered fade in for article sections
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all article sections
+            const articleSections = document.querySelectorAll('.article-section');
+            articleSections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = `all 0.6s ease-out ${index * 0.2}s`;
+                observer.observe(section);
+            });
+
+            // Observe the highlight quote
+            const highlightQuote = document.querySelector('.highlight-quote');
+            if (highlightQuote) {
+                highlightQuote.style.opacity = '0';
+                highlightQuote.style.transform = 'translateY(30px)';
+                highlightQuote.style.transition = 'all 0.6s ease-out 0.3s';
+                observer.observe(highlightQuote);
+            }
+        });
+    </script>
+</body>
+</html> 
